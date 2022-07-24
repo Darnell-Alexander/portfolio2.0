@@ -71,7 +71,7 @@ const Services =()=>{
     return(
         <div className='service-container'>
             
-            <div className='service'>
+            < motion.div className='service' initial={{ y:100 , opacity:0}} whileInView={{y:0 ,opacity:1}} transition={{duration:0.5}} >
                 <h1>Web Development</h1>
                 <ul>
                     <li>Responsive Design</li>
@@ -81,10 +81,10 @@ const Services =()=>{
                     <li>UI/UX Design</li>
                 </ul>
                 <button>Learn More</button>
-            </div>
+            </motion.div>
 
-            <div className='service'>
-                <h1>Mobile App Development</h1>
+            < motion.div className='service' initial={{ y:100 , opacity:0}} whileInView={{y:0 ,opacity:0.5}} transition={{duration:0.5 , delay:0.3}} >
+                <motion.h1 whileInView={{opacity:1 }}>Mobile App Development</motion.h1>
                 <ul>
                     <li>Android & IOS support</li>
                     <li>Minimalistic Coding</li>
@@ -93,9 +93,9 @@ const Services =()=>{
                     <li>Mobile Focused UI/UX Design</li>
                 </ul>
                 <button>Learn More</button>
-            </div>
+            </motion.div>
 
-            <div className='service'>
+            < motion.div className='service' initial={{ y:100 , opacity:0}} whileInView={{y:0 ,opacity:1}} transition={{duration:0.5 , delay:0.6}}>
                 <h1>Software Development</h1>
                 <ul>
                     <li>Support for Businesses</li>
@@ -105,7 +105,7 @@ const Services =()=>{
                     <li>Compatibility Testing</li>
                 </ul>
                 <button>Learn More</button>
-            </div>
+            </motion.div>
         </div>
 
     )
@@ -114,7 +114,11 @@ const Services =()=>{
 
 const Banner =()=>{
     return(
-        <div className='banner-container'>
+        <motion.div className='banner-container'
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{duration:1}}
+        >
             
            <button className='contactbtn'>Contact</button>
 
@@ -124,13 +128,13 @@ const Banner =()=>{
             </div>
 
             <button>Get A Qoute</button>
-        </div>
+        </motion.div>
     )
 }
 
 const IconStrip =()=>{
     return(
-        <div className='is-container'>
+        <motion.div className='is-container' initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}}>
             <FontAwesomeIcon icon={faHtml5} />
             <FontAwesomeIcon icon={faSass} />
             <FontAwesomeIcon icon={faJs} />
@@ -138,7 +142,7 @@ const IconStrip =()=>{
             <FontAwesomeIcon icon={faDatabase} />
             <FontAwesomeIcon icon={faJava} />
             <FontAwesomeIcon icon={faPython} />
-        </div>
+        </motion.div>
     )
 }
 export default Landing
